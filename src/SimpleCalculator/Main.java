@@ -3,7 +3,7 @@ package SimpleCalculator;
 import java.util.Scanner;
 
 public class Main {
-    // Make a calculator using method overloading
+    // Simple calculator using method overloading
 
     public static int addition(int firstNumber, int secondNumber, int thirdNumber) {
         return firstNumber + secondNumber + thirdNumber;
