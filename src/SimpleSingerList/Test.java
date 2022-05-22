@@ -65,8 +65,12 @@ public class Test {
         singers.searchSinger(name);
     }
 
+    public static void quit() {
+        System.out.println("Quiting the singer list application...");
+    }
+
     public static void main(String[] args) {
-        System.out.println("Welcome to the singer application...");
+        System.out.println("Welcome to the singer list application...");
         printOperations();
 
         boolean quit = false;
@@ -86,7 +90,10 @@ public class Test {
                 case 3 -> changeSinger();
                 case 4 -> removeSinger();
                 case 5 -> searchSinger();
-                case 6 -> quit = true;
+                case 6 -> {
+                    quit = true;
+                    quit();
+                }
                 default -> System.out.println("Invalid operation.");
             }
         }
