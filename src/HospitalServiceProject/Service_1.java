@@ -1,28 +1,23 @@
 package HospitalServiceProject;
 
-//**************Double Linked List************************//
 public class Service_1 {
     Patient head; //head of list
     Patient tail; //tail of list
 
     //Constructor
     public Service_1() {
-        //Write your codes here
         head = null;
         tail = null;
     }
 
-    //Check list is empty or not
+    //Checking list is empty or not
     public boolean isEmpty() {
-        //Write your codes here
         return (size() == 0);
     }
 
-    //This function first builds new patient with the given data
-    //than adds it to the LinkedList
-    //new nodes are added to the tail of LinkedList
+    // This function first builds new patient with the given than adds it to the LinkedList
+    // New nodes are added to the tail of LinkedList
     public void insert(String name) {
-        //Write your codes here
         Patient patient = new Patient(name);
         if (isEmpty()){
             head = tail = patient;
@@ -34,10 +29,8 @@ public class Service_1 {
         }
     }
 
-    // overload this method as new nodes are added to given position (int pos)
-    // fill the rest
+    // overloading this method as new nodes are added to given position (int pos)
     public void insert(String name, int pos) {
-        //Write your codes here
         Patient patient = new Patient(name);
         if (isEmpty()){
             head = tail = patient;
@@ -51,6 +44,7 @@ public class Service_1 {
                 temp = temp.next;
                 index++;
             }
+            assert temp != null;
             if (temp.previous == null){
                 temp.previous = patient;
                 patient.next = temp;
@@ -68,9 +62,8 @@ public class Service_1 {
         }
     }
 
-    //This method finds how many patients are exist in LinkedList
+    // This method finds how many patients exist in LinkedList
     public int size() {
-        //Write your codes here
         int size = 0;
         Patient temp = head;
         while (temp != null) {
@@ -80,10 +73,9 @@ public class Service_1 {
         return size;
     }
 
-    // This functions delete a node in the LinkedList by a given "data"
-    // parameter name changed as key in order to prevent confusion
+    // This function deletes a node in the LinkedList by a given "data"
+    // Parameter name changed as key in order to prevent confusion
     public Patient deleteByName(String name) {
-        //Write your codes here
         Patient temp = head;
         while (temp != null){
             if (temp.getName().equals(name))
@@ -91,21 +83,22 @@ public class Service_1 {
             temp = temp.next;
         }
         if (temp == head) {
+            assert temp != null;
             head = temp.next;
             head.previous = null;
         } else if (temp == tail){
             tail = tail.previous;
             tail.next = null;
         } else {
+            assert temp != null;
             temp.previous.next = temp.next;
             temp.next.previous = temp.previous;
         }
         return temp;
     }
 
-    // This functions delete a node in the LinkedList by a given position
+    // This function deletes a node in the LinkedList by a given position
     public Patient deleteByPosition(int pos) {
-        //Write your codes here
         Patient temp = head;
         System.out.println(temp.getName());
         int index = 0 ;
@@ -116,20 +109,21 @@ public class Service_1 {
             index++;
         }
         if (temp == head) {
+            assert temp != null;
             head = temp.next;
             head.previous = null;
         } else if (temp == tail){
             tail = tail.previous;
             tail.next = null;
         } else {
+            assert temp != null;
             temp.previous.next = temp.next;
             temp.next.previous = temp.previous;
         }
         return temp;
     }
 
-    //This function get the node in the given index
-    //*********************DO NOTHING*********************
+    // This function gets the node in the given index
     public Patient getByPosition(int pos){
         if(this.isEmpty())
             return new Patient("empty");
@@ -148,21 +142,19 @@ public class Service_1 {
         return current;
     }
 
-    // This function prints  the LinkenList
-    //*********************DO NOTHING*********************
+    // This function prints the LinkedList
     public void print() {
 
         if(this.isEmpty())
             return;
-        Patient patient = this.head;  // make a copy of head
+        Patient patient = this.head;  // makes a copy of head
         int index = 1;
 
-        // never operate on "head", otherwise you will lost the linkedlist
-        //unless you want to change "head"
+        // Never operate on "head", otherwise you will lose the LinkedList unless you want to change "head"
         while (patient != null) {
             System.out.println(index++ + ". " + patient.getName());
 
-            patient = patient.next;  // iterate to next node
+            patient = patient.next;  // iterates to next node
         }
 
     }

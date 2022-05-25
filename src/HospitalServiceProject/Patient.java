@@ -1,8 +1,7 @@
 package HospitalServiceProject;
 
-
 public class Patient {
-    private String name;
+    private final String name;
     Patient next;
     Patient previous;
 

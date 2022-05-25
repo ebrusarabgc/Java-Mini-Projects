@@ -1,9 +1,8 @@
 package HospitalServiceProject;
 
-
 //Stack with Linked List
 public class Service_2 {
-    Service_1 stack; // Your stack. Use this
+    Service_1 stack;
 
     // Constructor to initialize the stack
     Service_2(){
@@ -12,7 +11,6 @@ public class Service_2 {
 
     // Utility function to add an element `x` to the stack
     public void push(Patient p){
-        //Write your codes here
         if (isEmpty()){
             stack.head = stack.tail = p;
         }
@@ -44,7 +42,6 @@ public class Service_2 {
 
     // Utility function to return the size of the stack
     public int size() {
-        //Write your codes here
         int size = 0;
         Patient temp = stack.head;
         while (temp != null) {
