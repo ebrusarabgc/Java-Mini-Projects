@@ -75,7 +75,7 @@ public class Service_1 {
 
     // This function deletes a node in the LinkedList by a given "data"
     // Parameter name changed as key in order to prevent confusion
-    public Patient deleteByName(String name) {
+    public void deleteByName(String name) {
         Patient temp = head;
         while (temp != null){
             if (temp.getName().equals(name))
@@ -94,11 +94,10 @@ public class Service_1 {
             temp.previous.next = temp.next;
             temp.next.previous = temp.previous;
         }
-        return temp;
     }
 
     // This function deletes a node in the LinkedList by a given position
-    public Patient deleteByPosition(int pos) {
+    public void deleteByPosition(int pos) {
         Patient temp = head;
         System.out.println(temp.getName());
         int index = 0 ;
@@ -120,7 +119,6 @@ public class Service_1 {
             temp.previous.next = temp.next;
             temp.next.previous = temp.previous;
         }
-        return temp;
     }
 
     // This function gets the node in the given index

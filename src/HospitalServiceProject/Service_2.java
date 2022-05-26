@@ -23,15 +23,14 @@ public class Service_2 {
     }
 
     // Utility function to pop a top element from the stack
-    public Patient pop(){
+    public void pop(){
         if(isEmpty()) {
-            return null;
+            return;
         }
         Patient temp = stack.head;
         stack.head = temp.next;
         stack.head.previous = null;
 
-        return temp;
     }
 
     // Utility function to check if the stack is empty or not

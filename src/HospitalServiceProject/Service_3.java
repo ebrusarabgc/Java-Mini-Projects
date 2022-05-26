@@ -10,15 +10,14 @@ public class Service_3 {
     }
 
     // Utility function to dequeue the front element
-    public Patient dequeue() {
+    public void dequeue() {
         if(isEmpty()) {
-            return null;
+            return;
         }
         Patient temp = queue.head;
         queue.head = temp.next;
         queue.head.previous = null;
 
-        return temp;
     }
 
     // Utility function to add an item to the queue
