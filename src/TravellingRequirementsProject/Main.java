@@ -11,9 +11,7 @@ public class Main {
                 3- You must have visa for the country you travel.""";
 
         while (true) {
-            System.out.println();
-            System.out.println(requirements);
-            System.out.println();
+            System.out.println("\n" + requirements + "\n");
 
             Traveller traveller = new Traveller();
 
@@ -24,24 +22,21 @@ public class Main {
                 continue;
             }
 
-            System.out.println();
-            System.out.println("Travel ban status is checking...");
+            System.out.println("\nTravel ban status is checking...");
             Thread.sleep(3000);
 
             if (!traveller.travelBanCheck()) {
                 continue;
             }
 
-            System.out.println();
-            System.out.println("Visa status is checking...");
+            System.out.println("\nVisa status is checking...");
             Thread.sleep(3000);
 
             if (!traveller.visaStatusCheck()) {
                 continue;
             }
 
-            System.out.println();
-            System.out.println("Your transactions are completed. You can buy a plane ticket and go abroad...");
+            System.out.println("\nYour transactions are completed. You can buy a plane ticket and go abroad...");
             break;
         }
     }
